@@ -18,6 +18,9 @@ body {
 .right {
   width: 50%;
   height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #cover {
@@ -61,4 +64,40 @@ body {
 .icons i {
   font-size: 22px;
   margin-right: 18px;
+}
+
+.wrapper {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  flex-wrap: wrap;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: yellow;
+}
+/* 
+.wrapper .circle:nth-child(1) {
+  transform: rotate(-90deg) translate(150px);
+}
+
+.wrapper .circle:nth-child(2) {
+  transform: rotate(-45deg) translate(200px);
+}
+
+.wrapper .circle:nth-child(3) {
+  transform: rotate(0deg) translate(150px);
+}
+
+.wrapper .circle:nth-child(4) {
+  transform: rotate(45deg) translate(200px);
+} */
+
+.center {
+  position: absolute;
+  width: 100px;
+  height: 100px;
 }

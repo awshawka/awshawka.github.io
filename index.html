@@ -39,9 +39,94 @@
             </div>
         </div>
         <div class="right" id="cover">
+            <div class="wrapper" id="ball">
+                <div class="circle">
+                </div>
 
+                <div class="circle">
+                </div>
+
+                <div class="circle">
+                </div>
+
+                <br />
+                <div class="circle">
+                </div>
+
+                <div class="circle">
+                </div>
+
+                <div class="circle">
+                </div>
+
+                <div class="circle">
+                </div>
+
+
+
+            </div>
+            <div class="center">
+
+            </div>
         </div>
     </div>
+
+    <script>
+        ball.onmousedown = function (event) {
+
+            let shiftX = event.clientX - ball.getBoundingClientRect().left;
+            let shiftY = event.clientY - ball.getBoundingClientRect().top;
+
+            ball.style.position = 'absolute';
+            ball.style.zIndex = 1000;
+            document.body.append(ball);
+
+            moveAt(event.pageX, event.pageY);
+
+            // centers the ball at (pageX, pageY) coordinates
+            function moveAt(pageX, pageY) {
+                ball.style.left = pageX - shiftX + 'px';
+                ball.style.top = pageY - shiftY + 'px';
+            }
+
+            function onMouseMove(event) {
+                moveAt(event.pageX, event.pageY);
+            }
+
+            // (3) move the ball on mousemove
+            document.addEventListener('mousemove', onMouseMove);
+
+            // (4) drop the ball, remove unneeded handlers
+            ball.onmouseup = function () {
+                document.removeEventListener('mousemove', onMouseMove);
+                ball.onmouseup = null;
+            };
+
+        };
+
+        ball.ondragstart = function () {
+            return false;
+        };
+
+        setInterval(function () {
+            var circles = document.getElementsByClassName("circle");
+            for (var i = 0; i < circles.length; ++i) {
+                let rect1 = circles[i].getBoundingClientRect();
+                let rect2 = document.getElementsByClassName("center")[0].getBoundingClientRect();
+                if (rect1.right < rect2.left ||
+                    rect1.left > rect2.right ||
+                    rect1.bottom < rect2.top ||
+                    rect1.top > rect2.bottom) {
+                    circles[i].style.width = 200;
+                    circles[i].style.height = 200;
+                } else {
+                    circles[i].style.width = 250;
+                    circles[i].style.height = 250;
+                }
+            }
+        }, 100)
+
+    </script>
 </body>
 
 </html>
