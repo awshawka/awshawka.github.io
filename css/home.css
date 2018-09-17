@@ -2,63 +2,183 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .slide {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 100%;
-}
-
-.left {
-  width: 50%;
-  height: 100%;
-}
-
-.right {
-  width: 50%;
-  height: 100%;
+  background-color: #6600ff;
 }
 
 #cover {
   background-color: blueviolet;
 }
 
-#main {
+.intro {
   display: inline-flex;
-  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-}
-
-.intro {
   margin: 0px auto 0px auto;
   padding: 0px 0px 0px 0px;
+  background-color: white;
+  padding: 50px;
+  border-top-left-radius: 5%;
+  border-bottom-right-radius: 5%;
 }
 
 .title_wrapper {
-  text-align: center;
-  line-height: 30px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  margin-left: 50px;
+  max-width: 400px;
 }
 
 .title {
-  font-size: 52px;
+  animation: 1s ease-in-out 0s 1 slideInFromLeft;
+  font-size: 42px;
+  font-weight: bolder;
+}
+
+#name {
+  color: #6600ff;
+  transition: text-decoration 1s ease-out 0.5s;
+}
+
+#name:hover {
+  text-decoration: underline dotted;
+}
+
+#waterloo {
+  transition: color 0.1s ease-out 0.1s;
+}
+
+#waterloo:hover {
+  color: blueviolet;
 }
 
 .description {
-  font-size: 28px;
-  color: #8a93a5;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  font-size: 32px;
+  line-height: 45px;
+  color: #444425;
+}
+
+.small_description {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  font-size: 20px;
+}
+
+#underline:hover {
+  text-decoration: underline;
 }
 
 .icons {
   width: 100%;
   display: inline-flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 35px;
+  padding-top: 15px;
 }
 
 .icons i {
   font-size: 22px;
   margin-right: 18px;
+}
+
+.fa-github {
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+}
+
+.fa-linkedin-in {
+  animation: 1.5s ease-out 0s 1 slideInFromBottom;
+}
+
+.fa-at {
+  animation: 2s ease-out 0s 1 slideInFromBottom;
+}
+
+.picture {
+  animation: 0.7s ease-out 0s 1 slideInFromLeft;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  z-index: 99;
+}
+
+.picture img {
+  border-top-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+}
+
+@media screen and (max-width: 773px) {
+  .intro {
+    flex-direction: column;
+    border-radius: 0%;
+    padding: 20px;
+    border-top-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+  }
+
+  .picture {
+    margin: 50px auto 0px auto;
+  }
+
+  .title_wrapper {
+    margin: 0px;
+    margin-top: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icons {
+    margin-top: 10px;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 24px;
+  }
+
+  .small_description {
+    font-size: 15px;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-15%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(130%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
