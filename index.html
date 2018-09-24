@@ -10,6 +10,9 @@
     <meta property="og:type" content="website">
     <meta property="og:description" content="Personal website for Waseef Shawkat">
 
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://png.icons8.com/doodle/50/000000/user-male-skin-type-5.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
@@ -18,10 +21,22 @@
     <link rel="stylesheet" type="text/css" href="./css/home.css" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126270514-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-126270514-1');
+    </script>
+
 </head>
 
 <body>
-    <div class="slide">
+
+    <div class="slide" id="slide">
         <div class="intro">
             <div class="picture">
                 <img src="./img/DSC_3191.jpg" height="250px">
@@ -29,12 +44,11 @@
             <div class="title_wrapper">
                 <span class="title">Hi, <span id="name">I'm Waseef</span></span>
                 <br />
-                <span class="description">I'm a electrical and computer engineering student <a href="https://uwaterloo.ca/"
-                        id="waterloo">@UW</a>.
+                <span class="description">I'm a computer engineering student <a href="https://uwaterloo.ca/" id="waterloo">@UW</a>.
                     I love learning about programming and full stack development.</span>
                 <br />
-                <span class="small_description">See my <a href="" id="underline">past internships</a>, <a href="" id="underline">code</a>
-                    and <a href="" id="underline">blog.</a></span>
+                <span class="small_description">See my <a href="https://github.com/awshawka" id="underline">code,</a>
+                    <a href="" id="underline">blog</a> and <a href="./img/Resume.pdf" id="underline">résumé</a></span>
                 <br />
                 <div class="icons">
                     <a href="https://github.com/awshawka"><i class="fab fa-github"></i></a>
@@ -44,6 +58,15 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+        particlesJS.load('slide', './js/particles-config.json', function () {
+            document.getElementsByClassName("particles-js-canvas-el")[0].style.position = "absolute";
+            document.getElementsByClassName("particles-js-canvas-el")[0].style.zIndex = "0";
+        });
+    </script>
 </body>
 
 </html>

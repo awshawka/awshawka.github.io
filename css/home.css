@@ -16,20 +16,17 @@ a {
   background-color: #6600ff;
 }
 
-#cover {
-  background-color: blueviolet;
-}
-
 .intro {
   display: inline-flex;
   justify-content: center;
   align-items: flex-start;
   margin: 0px auto 0px auto;
   padding: 0px 0px 0px 0px;
-  background-color: white;
   padding: 50px;
   border-top-left-radius: 5%;
   border-bottom-right-radius: 5%;
+  z-index: 100;
+  background-color: white;
 }
 
 .title_wrapper {
@@ -62,7 +59,7 @@ a {
 }
 
 #waterloo:hover {
-  color: blueviolet;
+  color: #6600ff;
 }
 
 .description {
