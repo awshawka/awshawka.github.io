@@ -1,2 +1,3 @@
 # awshawka.github.io
-personal website
+Personal website
+Built using html, css and particles.js
